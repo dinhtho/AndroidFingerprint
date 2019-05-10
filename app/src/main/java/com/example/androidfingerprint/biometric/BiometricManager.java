@@ -1,4 +1,4 @@
-package com.example.androidfingerprint.abc;
+package com.example.androidfingerprint.biometric;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -48,22 +48,22 @@ public class BiometricManager extends BiometricManagerV23 {
         }
 
 
-        if(!BiometricUtils.isSdkVersionSupported()) {
+        if(!BiometricCallbackV28.BiometricUtils.isSdkVersionSupported()) {
             biometricCallback.onSdkVersionNotSupported();
             return;
         }
 
-        if(!BiometricUtils.isPermissionGranted(context)) {
+        if(!BiometricCallbackV28.BiometricUtils.isPermissionGranted(context)) {
             biometricCallback.onBiometricAuthenticationPermissionNotGranted();
             return;
         }
 
-        if(!BiometricUtils.isHardwareSupported(context)) {
+        if(!BiometricCallbackV28.BiometricUtils.isHardwareSupported(context)) {
             biometricCallback.onBiometricAuthenticationNotSupported();
             return;
         }
 
-        if(!BiometricUtils.isFingerprintAvailable(context)) {
+        if(!BiometricCallbackV28.BiometricUtils.isFingerprintAvailable(context)) {
             biometricCallback.onBiometricAuthenticationNotAvailable();
             return;
         }
@@ -72,7 +72,7 @@ public class BiometricManager extends BiometricManagerV23 {
     }
 
     public void cancelAuthentication(){
-        if(BiometricUtils.isBiometricPromptEnabled()) {
+        if(BiometricCallbackV28.BiometricUtils.isBiometricPromptEnabled()) {
             if (!mCancellationSignal.isCanceled())
                 mCancellationSignal.cancel();
         }else{
@@ -84,7 +84,7 @@ public class BiometricManager extends BiometricManagerV23 {
 
 
     private void displayBiometricDialog(BiometricCallback biometricCallback) {
-        if(BiometricUtils.isBiometricPromptEnabled()) {
+        if(BiometricCallbackV28.BiometricUtils.isBiometricPromptEnabled()) {
             displayBiometricPrompt(biometricCallback);
         } else {
             displayBiometricPromptV23(biometricCallback);

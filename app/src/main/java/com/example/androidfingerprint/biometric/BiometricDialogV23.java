@@ -1,18 +1,18 @@
-package com.example.androidfingerprint.abc;
+package com.example.androidfingerprint.biometric;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+
+import com.example.androidfingerprint.biometric.BiometricCallback;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-
 import androidx.annotation.NonNull;
+
+import com.example.androidfingerprint.R;
 
 public class BiometricDialogV23 extends BottomSheetDialog implements View.OnClickListener {
 

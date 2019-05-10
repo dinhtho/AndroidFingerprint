@@ -1,4 +1,4 @@
-package com.example.androidfingerprint.abc;
+package com.example.androidfingerprint.biometric;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -25,8 +25,6 @@ import javax.crypto.SecretKey;
 
 import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
 import androidx.core.os.CancellationSignal;
-
-import com.example.androidfingerprint.R;
 
 
 @TargetApi(Build.VERSION_CODES.M)
@@ -85,7 +83,7 @@ public class BiometricManagerV23 {
                         @Override
                         public void onAuthenticationFailed() {
                             super.onAuthenticationFailed();
-                            updateStatus(context.getString(R.string.biometric_failed));
+                            updateStatus("Fingerprint not recognized");
                             biometricCallback.onAuthenticationFailed();
                         }
                     }, null);

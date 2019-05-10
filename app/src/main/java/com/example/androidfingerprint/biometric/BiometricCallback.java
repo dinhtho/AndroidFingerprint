@@ -1,4 +1,4 @@
-package com.example.androidfingerprint.abc;
+package com.example.androidfingerprint.biometric;
 
 public interface BiometricCallback {
 
